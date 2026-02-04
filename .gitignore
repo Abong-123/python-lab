@@ -2,3 +2,6 @@ venv/
 4_project/__pycache__/
 *.pyc
 .env
+__pycache__/
+.env
+*.pyc

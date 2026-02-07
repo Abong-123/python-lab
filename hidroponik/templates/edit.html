@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/static/css/edit.css">
+</head>
+<body class="edit-page">
+    <h2>Edit Data</h2>
+
+    <form action="/update/{{data.id}}" method="post">
+
+        <input name="tanaman" value="{{data.tanaman}}" required>
+        <input name="jenis" value="{{data.jenis}}" required>
+        <input name="jumlah" type="number" value="{{data.jumlah}}" required>
+
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/">Kembali</a>
+</body>
+</html>

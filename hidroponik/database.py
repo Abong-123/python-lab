@@ -1,18 +1,17 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-DATABASE_URL = "postgresql://abrar:password@localhost:5432/python_lab"
+DATABASE_URL = "postgresql://abrar:password@localhost/python_lab"
 
 engine = create_engine(DATABASE_URL)
 
-SessionLocal = sessionmaker (
+SessionLocal = sessionmaker(
     autocommit = False,
     autoflush = False,
     bind = engine
 )
 
 Base = declarative_base()
-
 
 def get_db():
     db = SessionLocal()
@@ -24,7 +23,7 @@ def get_db():
 if __name__ == "__main__":
     try:
         conn = engine.connect()
-        print("database terhubung")
+        print("Database terhubung")
         conn.close()
     except Exception as e:
-        print("error: ", e)
+        print("Error: ", e)

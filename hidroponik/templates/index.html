@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Hidroponik</title>
+</head>
+<body>
+    <h2>Input Hidroponik</h2>
+
+    <form action="/create" method="post">
+        <input name="tanaman" placeholder="Tanaman" required>
+        <label for="jenis">Pilih Jenis</label>
+        <select name="jenis" id="jenis">
+            <option value="sayuran">sayuran</option>
+            <option value="buah">buah</option>
+            <option value="tanaman obat">tanaman obat</option>
+            <option value="bunga">bunga</option>
+            <option value="ubi">ubi</option>
+        </select>
+        <input name="jumlah" type="number" placeholder="Jumlah" required>
+
+        <button type="submit" onclick="this.disable=true;">Tambah</button>
+    </form>
+
+
+    <h2>Data Hidroponik</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Tanaman</th>
+            <th>Jenis</th>
+            <th>Jumlah</th>
+            <th>Tanggal</th>
+            <th>Aksi</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{d.id}}</td>
+            <td>{{d.tanaman}}</td>
+            <td>{{d.jenis}}</td>
+            <td>{{d.jumlah}}</td>
+            <td>{{d.tanggal_tanam.strftime("%d %B %Y %H:%M")}}</td>
+
+            <td>
+                <a href="/edit/{{d.id}}">
+                    <button>Edit</button>
+                </a>
+
+                <form action="/delete/{{d.id}}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function() {
+        this.querySelector("button").disabled = true;
+    });
+</script>
+
+</body>
+</html>
+

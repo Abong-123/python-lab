@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 40px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+    <title>monitoring suhu</title>
+    <meta http-equiv="refresh" content="5">
+
+</head>
+<body>
+    <h2>Data Monitoring</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Suhu</th>
+            <th>Kelembapan</th>
+            <th>timestamp</th>
+        </tr>
+
+        {% for d in data %}
+        <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.suhu }}</td>
+            <td>{{ d.kelembapan }}</td>
+            <td>{{ d.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

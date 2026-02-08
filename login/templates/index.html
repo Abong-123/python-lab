@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="user-input-page">
+    <h2>Input User</h2>
+    <form action="" method="post">
+        <input type="text" name="name" placeholder="masukan username" required>
+        <br><br>
+
+        <input type="text" name="password" placeholder="masukan password" required>
+        <br><br>
+
+        <input type="text" name="email" placeholder="masukan email" required>
+        <br><br>
+
+        <input type="text" name="phone" placeholder="masukan nomer telephone" required>
+        <br><br>
+
+        <input type="text" name="address" placeholder="masukan alamat" required>
+        <br><br>
+
+        <button type="submit" onclick="this.disable=true;">Tambah</button>
+    </form>
+
+    {% if success %}
+        <p style="color: green;">✅ Data berhasil diinput</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">❌ {{ error }}</p>
+    {% endif %}
+
+</body>
+</html>

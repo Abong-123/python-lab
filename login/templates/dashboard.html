@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <h2>Dashboard</h2>
+        
+        <!-- Optional: Welcome Message -->
+        <div class="welcome-message">
+            <h3>Welcome back, {{ user.name }}! 👋</h3>
+            <p>Here's your profile information</p>
+        </div>
+        
+        <div class="user-info-grid">
+            <div class="info-card">
+                <b>Username</b>
+                <p>{{ user.name }}</p>
+            </div>
+            
+            <div class="info-card">
+                <b>Email</b>
+                <p>{{ user.email }}</p>
+            </div>
+            
+            <div class="info-card">
+                <b>Phone</b>
+                <p>{{ user.phone }}</p>
+            </div>
+            
+            <div class="info-card">
+                <b>Address</b>
+                <p>{{ user.address }}</p>
+            </div>
+        </div>
+        
+        <div class="logout-container">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

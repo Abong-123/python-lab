@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h2>Login</h2>
+
+        {% if error %}
+            <p style="color: red;">❌ {{ error }}</p>
+        {% endif %}
+
+        {% if success %}
+            <p style="color: green;">✅ {{ success }}</p>
+        {% endif %}
+
+        <form method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <br><br>
+
+            <input type="password" name="password" placeholder="Password" required>
+            <br><br>
+
+            <!-- Optional: Remember me & Forgot password -->
+            <div class="remember-forgot">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember">
+                    Remember me
+                </label>
+                <a href="/forgot-password" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Optional: Register link -->
+        <div class="login-links">
+            <p>Don't have an account? <a href="/register">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>

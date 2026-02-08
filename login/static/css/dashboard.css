@@ -1,0 +1,237 @@
+.dashboard-page {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+    margin: 0;
+    color: #e2e8f0;
+}
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.dashboard-page h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.dashboard-page h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+}
+
+/* Welcome Message */
+.welcome-message {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.welcome-message h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.welcome-message p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+/* User Info Grid */
+.user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.info-card b {
+    display: block;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 1.3rem;
+    color: #e2e8f0;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Color accents for each card */
+.info-card:nth-child(1) {
+    border-top: 3px solid #3b82f6;
+}
+
+.info-card:nth-child(2) {
+    border-top: 3px solid #8b5cf6;
+}
+
+.info-card:nth-child(3) {
+    border-top: 3px solid #10b981;
+}
+
+.info-card:nth-child(4) {
+    border-top: 3px solid #f59e0b;
+}
+
+/* Logout Container */
+.logout-container {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.dashboard-page a {
+    display: inline-block;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-page a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.dashboard-page a:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-message,
+.info-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.2s; }
+.info-card:nth-child(3) { animation-delay: 0.3s; }
+.info-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-page {
+        padding: 20px 15px;
+    }
+    
+    .dashboard-container {
+        padding: 25px;
+    }
+    
+    .dashboard-page h2 {
+        font-size: 2rem;
+    }
+    
+    .welcome-message {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .welcome-message h3 {
+        font-size: 1.5rem;
+    }
+    
+    .user-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .info-card {
+        padding: 20px;
+    }
+    
+    .info-card p {
+        font-size: 1.2rem;
+    }
+    
+    .dashboard-page a {
+        padding: 13px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Consistency with other pages */
+.dashboard-page,
+.login-page,
+.user-input-page {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+}
+
+/* Ensure all cards have same height */
+.info-card {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Simple futuristic glow effect on cards */
+.info-card:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.1), 0 10px 25px rgba(0, 0, 0, 0.3);
+}
